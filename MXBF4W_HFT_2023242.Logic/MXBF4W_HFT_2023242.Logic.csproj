@@ -1,7 +1,12 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MXBF4W_HFT_2023242.Models\MXBF4W_HFT_2023242.Models.csproj" />
+    <ProjectReference Include="..\MXBF4W_HFT_2023242.Repository\MXBF4W_HFT_2023242.Repository.csproj" />
+  </ItemGroup>
 
 </Project>
