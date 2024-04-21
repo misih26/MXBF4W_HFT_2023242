@@ -22,6 +22,21 @@ namespace MXBF4W_HFT_2023242.Models
         public int Price { get; set; }
         //public int BiggestBuyer { get; set; }
 
-      //  public virtual Customer Customer { get; set; } // Navigation Property, ide is kell?
+        //  public virtual Customer Customer { get; set; } // Navigation Property, ide is kell?
+        public Drink()
+        {
+                
+        }
+        public Drink(string line)
+        {
+            string[] split = line.Split('#');
+            DrinkId = int.Parse(split[0]);
+            Name = split[1];
+            AlcLevel = int.Parse(split[2]);
+            Price = int.Parse(split[3]);
+            //BiggestBuyer = int.Parse(split[4]);
+
+
+        }
     }
 }

@@ -21,6 +21,20 @@ namespace MXBF4W_HFT_2023242.Models
         public int BiggestCustomerId { get; set; } //foreign key
 
         public virtual Customer Customer { get; set; } // Navigation Property
+        public Pub()
+        {
+                
+        }
+        public Pub(string line)
+        {
+            string[] split = line.Split('#');
+            PubId = int.Parse(split[0]);
+            Name = split[1];
+            Address = split[2];
+            BiggestCustomerId = int.Parse(split[3]);
+
+
+        }
     }
 }
 

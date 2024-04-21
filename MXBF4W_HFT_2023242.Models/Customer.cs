@@ -25,5 +25,19 @@ namespace MXBF4W_HFT_2023242.Models
         public int FavDrink { get; set; } //fk
 
         public virtual Drink Drink { get; set; } // Navigation Property
+        public Customer()
+        {
+
+        }
+        public Customer(string line)
+        {
+            string[] split = line.Split('#');
+            CustomerID = int.Parse(split[0]);
+            Name = split[1];
+            Age = int.Parse(split[2]);
+            Gender = split[3];
+            FavDrink = int.Parse(split[4]);
+            //FavPub = int.Parse(split[5]);
+        }
     }
 }
