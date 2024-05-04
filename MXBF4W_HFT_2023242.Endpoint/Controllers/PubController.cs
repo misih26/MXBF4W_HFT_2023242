@@ -3,6 +3,8 @@ using MXBF4W_HFT_2023242.Logic;
 using MXBF4W_HFT_2023242.Models;
 using System.Collections.Generic;
 
+// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+
 namespace MXBF4W_HFT_2023242.Endpoint.Controllers
 {
     [Route("[controller]")]
@@ -52,3 +54,4 @@ namespace MXBF4W_HFT_2023242.Endpoint.Controllers
         }
     }
 }
+

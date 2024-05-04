@@ -4,7 +4,10 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
-
+	<ItemGroup>
+		<PackageReference Include="ConsoleMenu-simple" Version="2.4.2" />
+		<PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7" />
+	</ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MXBF4W_HFT_2023242.Models\MXBF4W_HFT_2023242.Models.csproj" />
   </ItemGroup>
