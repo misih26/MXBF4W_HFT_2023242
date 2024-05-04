@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MXBF4W_HFT_2023242.Repository
+namespace MXBF4W_HFT_2023242.Repository.ModelRepos
 {
     public class DrinkRepository : Repository<Drink>, IRepository<Drink>
     {

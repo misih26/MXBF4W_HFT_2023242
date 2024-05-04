@@ -194,7 +194,8 @@ namespace MXBF4W_HFT_2023242.Client
         static void Main(string[] args)
         {
 
-            rest = new RestService("http://localhost:21474/", "pub");
+            rest = new RestService("http://localhost:14226/", "pub");
+
 
 
             var customerSubMenu = new ConsoleMenu(args, level: 1)

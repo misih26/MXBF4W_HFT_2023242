@@ -5,29 +5,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MXBF4W_HFT_2023242.Repository
+namespace MXBF4W_HFT_2023242.Repository.ModelRepos
 {
-    public class CustomerRepository : Repository<Customer>, IRepository<Customer>
+    public class PubRepository : Repository<Pub>, IRepository<Pub>
     {
-        public CustomerRepository(PubDbContext db) : base(db)
+        public PubRepository(PubDbContext db) : base(db)
         {
         }
 
-        public override Customer Read(int id)
+        public override Pub Read(int id)
         {
-            return db.Customers.FirstOrDefault(t => t.CustomerID == id);
+            return db.Pubs.FirstOrDefault(t => t.PubId == id);
         }
 
-        public override void Update(Customer item)
+        public override void Update(Pub item)
         {
-            var old = Read(item.CustomerID);
+            var old = Read(item.PubId);
             foreach (var prop in old.GetType().GetProperties())
             {
                 if (prop.GetAccessors().FirstOrDefault(t => t.IsVirtual) == null)
                 {
                     prop.SetValue(old, prop.GetValue(item));
                 }
-
             }
             db.SaveChanges();
         }
