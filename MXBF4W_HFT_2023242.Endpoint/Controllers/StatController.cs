@@ -21,7 +21,7 @@ namespace MXBF4W_HFT_2023242.Endpoint.Controllers
         }
 
 
-        [HttpGet("{drinkname}")]
+        [HttpGet("{drinkName}")]
         public IEnumerable<CustomerWithSameFavDrink> GetCustomersWithSameFavDrink(string drinkName)
         {
             return this.logic.GetCustomersWithSameFavDrink(drinkName);
