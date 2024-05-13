@@ -98,7 +98,7 @@ namespace MXBF4W_HFT_2023242.Logic
         public IEnumerable<FavCustomerAge> GetPubsFavCustomerAge(string barname)
         {
             return from x in this.repo.ReadAll()
-                   orderby x.Customer.Age
+                   where x.Name == barname
                    select new FavCustomerAge()
                    {
                        PubName = x.Name,

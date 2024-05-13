@@ -39,10 +39,10 @@ namespace MXBF4W_HFT_2023242.Endpoint.Controllers
             return this.publogic.GetFavoriteCustomerWithMostPubs();
         }
 
-        [HttpGet("{barname}")]
-        public IEnumerable<FavCustomerAge> GetPubsFavCustomerAge(string barname)
+        [HttpGet("{pubName}")]
+        public IEnumerable<FavCustomerAge> GetPubsFavCustomerAge(string pubName)
         {
-            return this.publogic.GetPubsFavCustomerAge(barname);
+            return this.publogic.GetPubsFavCustomerAge(pubName);
         }
 
         [HttpGet("{customername}")]
