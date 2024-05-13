@@ -126,7 +126,7 @@ namespace MXBF4W_HFT_2023242.Client
 
                 foreach (var item in q)
                 {
-                    Console.WriteLine(item.ToString());
+                    Console.WriteLine("Name: " + item.name + "\nDrink name: " + item.drinkName + "\n");
                 }
                 Console.ReadLine();
             }
