@@ -16,19 +16,46 @@ namespace MXBF4W_HFT_2023242.Client
             {
                 Console.Write("Enter Customer name: ");
                 string name = Console.ReadLine();
-                rest.Post(new Customer() { Name = name, Age = 19 }, "customer");
+                Console.Write("Enter Customer ID: ");
+                int id = int.Parse(Console.ReadLine());
+                Console.Write("Enter Customer age: ");
+                int age = int.Parse(Console.ReadLine());
+                Console.Write("Enter Customer gender: ");
+                string gender = Console.ReadLine();
+                Console.Write("Enter Customer favorite drink ID: ");
+                int favDrink = int.Parse(Console.ReadLine());
+                rest.Post(new Customer() { Name = name, CustomerID = id, Age = age, Gender = gender, FavDrink = favDrink }, "customer");
             }
             if (entity == "Drink")
             {
+                Console.Write("Enter Drink ID: ");
+                int id = int.Parse(Console.ReadLine());
+
                 Console.Write("Enter Drink name: ");
                 string name = Console.ReadLine();
-                rest.Post(new Drink() { Name = name, AlcLevel = 19 }, "drink");
+
+                Console.Write("Enter Alcohol level: ");
+                int alcLevel = int.Parse(Console.ReadLine());
+
+                Console.Write("Enter Drink price: ");
+                int price = int.Parse(Console.ReadLine());
+
+                rest.Post(new Drink() { DrinkId = id, Name = name, AlcLevel = alcLevel, Price = price }, "drink");
             }
             if (entity == "Pub")
             {
+                Console.Write("Enter Pub ID: ");
+                int id = int.Parse(Console.ReadLine());
+
                 Console.Write("Enter Pub name: ");
                 string name = Console.ReadLine();
-                rest.Post(new Pub() { Name = name, Address = "Adsadasd" }, "pub");
+
+                Console.Write("Enter Pub address: ");
+                string address = Console.ReadLine();
+
+                Console.Write("Enter Biggest Customer ID: ");
+                int biggestCustomerId = int.Parse(Console.ReadLine());
+                rest.Post(new Pub() { PubId = id, Name = name, Address = address, BiggestCustomerId = biggestCustomerId }, "pub");
             }
         }
         static void List(string entity)
@@ -68,9 +95,21 @@ namespace MXBF4W_HFT_2023242.Client
                 Console.Write("Enter Customer's id to update: ");
                 int id = int.Parse(Console.ReadLine());
                 Customer one = rest.Get<Customer>(id, "customer");
+
                 Console.Write($"New name [old: {one.Name}]: ");
                 string name = Console.ReadLine();
+
+                Console.Write($"New age [old: {one.Age}]: ");
+                int age = int.Parse(Console.ReadLine());
+                Console.Write($"New gender [old: {one.Gender}]: ");
+                string gender = Console.ReadLine();
+                Console.Write($"New favorite drink ID [old: {one.FavDrink}]: ");
+                int favDrink = int.Parse(Console.ReadLine());
+
                 one.Name = name;
+                one.Age = age;
+                one.Gender = gender;
+                one.FavDrink = favDrink;
                 rest.Put(one, "customer");
             }
             if (entity == "Drink")
@@ -78,9 +117,17 @@ namespace MXBF4W_HFT_2023242.Client
                 Console.Write("Enter Drink's id to update: ");
                 int id = int.Parse(Console.ReadLine());
                 Drink one = rest.Get<Drink>(id, "drink");
+
                 Console.Write($"New name [old: {one.Name}]: ");
                 string name = Console.ReadLine();
+                Console.Write($"New alcohol level [old: {one.AlcLevel}]: ");
+                int alcLevel = int.Parse(Console.ReadLine());
+                Console.Write($"New price [old: {one.Price}]: ");
+                int price = int.Parse(Console.ReadLine());
+
                 one.Name = name;
+                one.AlcLevel = alcLevel;
+                one.Price = price;
                 rest.Put(one, "drink");
             }
             if (entity == "Pub")
@@ -88,9 +135,17 @@ namespace MXBF4W_HFT_2023242.Client
                 Console.Write("Enter Pub's id to update: ");
                 int id = int.Parse(Console.ReadLine());
                 Pub one = rest.Get<Pub>(id, "pub");
+
                 Console.Write($"New name [old: {one.Name}]: ");
                 string name = Console.ReadLine();
+                Console.Write($"New address [old: {one.Address}]: ");
+                string address = Console.ReadLine();
+                Console.Write($"New biggest customer ID [old: {one.BiggestCustomerId}]: ");
+                int biggestCustomerId = int.Parse(Console.ReadLine());
+
                 one.Name = name;
+                one.Address = address;
+                one.BiggestCustomerId = biggestCustomerId;
                 rest.Put(one, "pub");
             }
         }
